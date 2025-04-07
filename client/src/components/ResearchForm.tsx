@@ -54,7 +54,7 @@ export default function ResearchForm({
             // Stage 1: Planning
             onStageChange('planning');
 
-            const response = await axios.post('http://localhost:5000/chat', {
+            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
                 query: topic.trim()
             });
 

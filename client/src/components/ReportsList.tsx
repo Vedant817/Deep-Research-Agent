@@ -39,7 +39,7 @@ export default function ReportsList({ onSelectReport }: ReportsListProps) {
     const fetchReports = async () => {
         try {
             setLoading(true);
-            const response = await axios.get<ReportsResponse>('http://localhost:5000/reports');
+            const response = await axios.get<ReportsResponse>(`${process.env.NEXT_PUBLIC_API_URL}/reports`);
 
             if (response.data.status === 'success' && response.data.reports) {
                 setReports(response.data.reports);
