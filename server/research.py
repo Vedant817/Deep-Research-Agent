@@ -1,10 +1,15 @@
 import requests
 import os
 from typing import Optional
+from dotenv import load_dotenv
+import json
+
+load_dotenv()
 
 BASE_API_URL = os.getenv('BASE_API_URL')
 LANGFLOW_ID = os.getenv('LANGFLOW_ID')
 FLOW_ID = os.getenv('FLOW_ID')
+TAVILY_API_KEY = os.getenv('TAVILY_API_KEY')
 APPLICATION_TOKEN = os.getenv('APPLICATION_TOKEN')
 LANGFLOW_ENDPOINT = os.getenv('LANGFLOW_ENDPOINT')
 
@@ -15,7 +20,7 @@ DEFAULT_TWEAKS = {
         "tool_placeholder": ""
     },
     "TavilySearchComponent-xDlkf": {
-        "api_key": os.getenv('TAVILY_API_KEY'),
+        "api_key": TAVILY_API_KEY,
         "include_answer": True,
         "include_images": True,
         "max_results": 5,
@@ -55,7 +60,7 @@ def run_flow(message: str,
         response = requests.post(api_url, json=payload, headers=headers)
         response.raise_for_status()
         
-        return response.json()
+        return json.loads(response.text)
     except requests.exceptions.RequestException as e:
         print(f"Error making request: {str(e)}")
         if hasattr(e.response, 'text'):
