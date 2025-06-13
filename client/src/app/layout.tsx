@@ -14,8 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Deep Research",
-  description: "Deep Research Agent",
+  title: "Sypher",
+  description:
+    "The Sypher is an AI-powered research assistant that helps you investigate complex topics by breaking them into manageable tasks, collecting data, analyzing, and synthesizing the findings into a comprehensive report.",
 };
 
 export default function RootLayout({
