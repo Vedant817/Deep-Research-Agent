@@ -9,6 +9,9 @@
  */
 
 import type * as agent from "../agent.js";
+import type * as agents_mainAgent from "../agents/mainAgent.js";
+import type * as agents_models_modelClient from "../agents/models/modelClient.js";
+import type * as agents_tools_planTask from "../agents/tools/planTask.js";
 import type * as index from "../index.js";
 
 import type {
@@ -27,6 +30,9 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   agent: typeof agent;
+  "agents/mainAgent": typeof agents_mainAgent;
+  "agents/models/modelClient": typeof agents_models_modelClient;
+  "agents/tools/planTask": typeof agents_tools_planTask;
   index: typeof index;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
