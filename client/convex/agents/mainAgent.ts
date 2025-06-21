@@ -31,7 +31,7 @@ Your task is to:
         queryMemoryTool,
         generateReportTool,
     },
-    maxSteps: 20,
+    maxSteps: 30,
     maxRetries: 5,
     usageHandler: async (ctx, { model, usage }) => {
         console.log(`[Agent Usage] Model: ${model}`);
