@@ -11,8 +11,14 @@
 import type * as agent from "../agent.js";
 import type * as agents_mainAgent from "../agents/mainAgent.js";
 import type * as agents_models_modelClient from "../agents/models/modelClient.js";
+import type * as agents_tools_embedAndStore from "../agents/tools/embedAndStore.js";
+import type * as agents_tools_fetchWebResults from "../agents/tools/fetchWebResults.js";
+import type * as agents_tools_generateReport from "../agents/tools/generateReport.js";
 import type * as agents_tools_planTask from "../agents/tools/planTask.js";
+import type * as agents_tools_queryMemory from "../agents/tools/queryMemory.js";
+import type * as agents_tools_summarizeDoc from "../agents/tools/summarizeDoc.js";
 import type * as index from "../index.js";
+import type * as workflow from "../workflow.js";
 
 import type {
   ApiFromModules,
@@ -32,8 +38,14 @@ declare const fullApi: ApiFromModules<{
   agent: typeof agent;
   "agents/mainAgent": typeof agents_mainAgent;
   "agents/models/modelClient": typeof agents_models_modelClient;
+  "agents/tools/embedAndStore": typeof agents_tools_embedAndStore;
+  "agents/tools/fetchWebResults": typeof agents_tools_fetchWebResults;
+  "agents/tools/generateReport": typeof agents_tools_generateReport;
   "agents/tools/planTask": typeof agents_tools_planTask;
+  "agents/tools/queryMemory": typeof agents_tools_queryMemory;
+  "agents/tools/summarizeDoc": typeof agents_tools_summarizeDoc;
   index: typeof index;
+  workflow: typeof workflow;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
 
